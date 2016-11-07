@@ -5,7 +5,7 @@ namespace StudentQueries
 {
 	class Program
 	{
-		static void CopyToDatabase(Malika_Context context)
+		static void CopyToDatabase(GreenContext context)
 		{
 			Repository repo = new Repository();
 			context.Groups.AddRange(repo.Groups);
@@ -14,7 +14,7 @@ namespace StudentQueries
 			context.SaveChanges();
 		}
 
-		static void FilterAndOrder(Malika_Context context)
+		static void FilterAndOrder(GreenContext context)
 		{
 			var result = from s in context.Students
 						 where s.BirthDate.Year >= 1999
@@ -25,7 +25,7 @@ namespace StudentQueries
 				Console.WriteLine("{0} {1}: {2}", s.Name, s.Surname, s.Rating);
 		}
 
-		static void Join(Malika_Context context)
+		static void Join(GreenContext context)
 		{
 			var result = from s in context.Students
 						 join g in context.Groups
@@ -41,7 +41,7 @@ namespace StudentQueries
 			
 		}
 
-		static void GroupByFirstLetter(Malika_Context context)
+		static void GroupByFirstLetter(GreenContext context)
 		{
 			var result = from s in context.Students
 						 group s by s.Name.Substring(0, 1) into g
@@ -57,7 +57,7 @@ namespace StudentQueries
 
 		static void Main(string[] args)
 		{
-			using (Malika_Context c = new Malika_Context())
+			using (GreenContext c = new GreenContext())
 			{
 				// Uncomment and run once to fill the database
 				// CopyToDatabase(c);
