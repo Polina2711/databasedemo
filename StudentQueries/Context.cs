@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace StudentQueries
 {
-	class Malika_Context : DbContext
+	class GreenContext : DbContext
 	{
 		public DbSet<Student> Students { get; set; }
 		public DbSet<Group> Groups { get; set; }
 
-		public Malika_Context() : base("localsql")
+		public GreenContext() : base("localsql")
 		{
 
 		}
