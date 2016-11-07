@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace StudentQueries
 {
-	class PolContext : DbContext
+	class GreenContext : DbContext
 	{
 		public DbSet<Student> Students { get; set; }
 		public DbSet<Group> Groups { get; set; }
 
-		public PolContext() : base("localsql")
+		public GreenContext() : base("localsql")
 		{
 
 		}
